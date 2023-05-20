@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+background-color: bisque;
+height: 100vh;
+display: flex;
+justify-content: center;
+align-items: center;
+
+
+}
+.container{
+    background-color: #181614;
+    width: 280px;
+    height: 500px;
+    box-shadow: 4px 4px 30px rgba(0, 0, 0, 0.3);
+    border-radius: 15px;
+}
+h3{
+    display: flex;
+    justify-content: center;
+    margin: 1px;
+    color: #C33212;
+}
+.line{
+    margin-left: auto;
+    margin-right: auto;
+    border:1px solid #C33212;
+    width :60%;
+}
+.line-2{
+    
+  margin-left:auto;
+  margin-right: auto;
+  border:1px solid grey;
+  width :80%;
+}
+
+form input{
+    grid-column: span 4;
+    width: 100%;
+    height: 120px;
+    border: none;
+    font-size: 2rem;
+    padding: 1rem;
+    background-color:transparent;
+    color: white;
+    text-align: right;
+    pointer-events: none;
+    margin-bottom: 10px;
+    margin-top: 5px;
+}
+.buttons{
+    display: grid;
+    grid-template-columns: repeat(4,68px);
+    grid-gap: 2px;
+    margin: 8px;
+    margin-top: 20px;
+}
+
+button{
+    margin: 2px;
+    border: 1px solid #000;
+    width: 48px;
+    height: 48px;
+    background-color: transparent;
+    border-radius: 50%;
+    border: 1px solid white;
+    font-size: 22px;
+    font-weight:600;
+    border-radius: 55px;
+    cursor: pointer;
+    color: white; 
+} 
+.btn-clear{
+    grid-column: span 4;
+    width: 80%; 
+    margin: 20px;
+    border-radius: 10%;
+    border: 2px solid #C33212;
+
+} 
+.btn-equal{
+    background-color: orangered;
+    border: none;
+}
+.btn-op{
+    background-color: #313131;
+    border: none;
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h3 class="heading">Calculator</h3>
+        <hr class="line">
+        <form>
+            <input type="text" placeholder="0" id="screen">
+        </form>
+        <hr class="line-2">
+        <div class="buttons">
+            <button type="button" class="btn-num" onclick="display('7')">7</button>
+            <button type="button" class="btn-num" onclick="display('8')">8</button>
+            <button type="button" class="btn-num" onclick="display('9')">9</button>
+            <button type="button" class="btn-op" onclick="display('/')">/</button>
+            <button type="button" class="btn-num" onclick="display('4')">4</button>
+            <button type="button" class="btn-num" onclick="display('5')">5</button>
+            <button type="button" class="btn-num" onclick="display('6')">6</button>
+            <button type="button" class="btn-op" onclick="display('*')">*</button>
+            <button type="button" class="btn-num" onclick="display('1')">1</button>
+            <button type="button" class="btn-num" onclick="display('2')">2</button>
+            <button type="button" class="btn-num" onclick="display('3')">3</button>
+            <button type="button" class="btn-op" onclick="display('+')">+</button>
+            <button type="button" class="btn-op" onclick="display('.')">.</button>
+            <button type="button" class="btn-num" onclick="display('0')">0</button>
+            <button type="button" class="btn-equal" onclick="Calculate()">=</button>
+            <button type="button" class="btn-op" onclick="display('-')">-</button>
+            <button type="button" class="btn-clear" onclick="Clear()">clear</button>
+        </div>
+
+    </div>
+    <script>
+        let outputscreen=document.getElementById("screen");
+        function display(num){
+            outputscreen.value +=num;
+        }
+        function Clear(){
+            outputscreen.value ="";
+        }
+        function Calculate(){
+          try{
+                outputscreen.value=eval(outputscreen.value);
+          }
+          catch(err){
+            alert("Invalid Operator")
+          }
+        }
+
+    </script>
+</body>
+</html>
