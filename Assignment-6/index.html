@@ -6,27 +6,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        *{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* ===================CASCADING STYLE SHEET===============================       */
+*{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
 }
 
 body {
-background-color: bisque;
+background-color: white;
 height: 100vh;
 display: flex;
 justify-content: center;
 align-items: center;
-
-
 }
 .container{
     background-color: #181614;
     width: 280px;
     height: 500px;
-    box-shadow: 4px 4px 30px rgba(0, 0, 0, 0.3);
-    border-radius: 15px;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.8);
+    border-radius: 25px;
 }
 h3{
     display: flex;
@@ -88,21 +87,34 @@ button{
     grid-column: span 4;
     width: 80%; 
     margin: 20px;
-    border-radius: 10%;
+    border-radius: 10px;
     border: 2px solid #C33212;
-
 } 
+.btn-clear:hover{
+    background-color: #C33212;
+}
 .btn-equal{
     background-color: orangered;
     border: none;
+}
+.btn-equal:hover{
+    background-color: transparent;
+    border: 1px solid white;
 }
 .btn-op{
     background-color: #313131;
     border: none;
 }
+.btn-op:hover{
+    background-color: transparent;
+    border: 1px solid white;
+}
     </style>
+
 </head>
 <body>
+
+    <!-- =========================HTML==================================== -->
     <div class="container">
         <h3 class="heading">Calculator</h3>
         <hr class="line">
@@ -131,6 +143,8 @@ button{
         </div>
 
     </div>
+
+    <!-- ===================JAVASCRIPT============================ -->
     <script>
         let outputscreen=document.getElementById("screen");
         function display(num){
@@ -144,7 +158,7 @@ button{
                 outputscreen.value=eval(outputscreen.value);
           }
           catch(err){
-            alert("Invalid Operator")
+            alert("Invalid Operators")
           }
         }
 
